@@ -11,16 +11,30 @@ func Agendamento() {
 	var data string
 	var consulta string
 
-	f.Print("Olá qual é seu nome: ")
-	f.Scanln(&nome)
+	check := 2
 
-	f.Print("Digite a data no formato (DD-MM-AAAA HH:MM): ")
-	f.Scanln(&data)
+	for check != 1 {
 
-	dataFormatada, _ := t.Parse("02-01-2006 15:04", data)
+		f.Print("Olá qual é seu nome: ")
+		f.Scanln(&nome)
 
-	f.Print("Para que é a consulta: ")
-	f.Scanln(&consulta)
+		f.Print("Para que dia é a consulta: ")
+		f.Scanln(&data)
 
-	f.Printf("Você, %s, tem uma consulta no dia %s, para: %s\n", nome, dataFormatada.Format("02-01-2006 15:04"), consulta)
+		f.Print("Para que é a consulta: ")
+		f.Scanln(&consulta)
+
+		msgFinal := f.Sprintf(`
+Você, %s, tem uma consulta de %s marcada para o dia: %s. 
+Certo? ( 1 - Certo, 2 - Errado)
+>> `, nome, consulta, data) // Mensagem de check
+
+		f.Print(msgFinal)
+		f.Scanln(&check)
+	}
+
+	f.Println("\nObrigado!!")
+
+	t.Sleep(2 * t.Second)
+
 }
