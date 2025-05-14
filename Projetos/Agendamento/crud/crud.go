@@ -18,14 +18,12 @@ type Model struct {
 	Marcada  time.Time
 }
 
-func Crud(database string) {
+func Crud(database string) *sql.DB {
 	db, err := sql.Open("sqlite3", database)
 	if err != nil {
 		log.Fatal(err)
-	} else {
-		log.Println("Banco conectado")
 	}
-	defer db.Close()
+	log.Println("Banco conectado")
 
 	query := `CREATE TABLE IF NOT EXISTS consultas (
 		id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -41,6 +39,8 @@ func Crud(database string) {
 	} else {
 		log.Println("Tabela criada ou já existia!!")
 	}
+
+	return db
 }
 
 // Agora a função está fora da função Crud
