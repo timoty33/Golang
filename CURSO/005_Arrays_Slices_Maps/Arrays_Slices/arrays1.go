@@ -11,12 +11,12 @@ func Arrays1() {
 	// Se um array não estiver totalmente preenchido, não acontece nada
 	nomes := [3]string{"Timóteo", "Sofia"}
 
-	fmt.Println(nomes) // [Timóteo Sofia ] <-- Espaço vazio no final
-	fmt.Println(len(nomes))
+	fmt.Println(nomes)      // [Timóteo Sofia ] <-- Espaço vazio no final
+	fmt.Println(len(nomes)) // 3
 
 	// Se quisermos preencher
 	nomes[2] = "Helena"
 
-	fmt.Println(nomes) // [Timóteo Sofia Helena]
-	fmt.Println(len(nomes))
+	fmt.Println(nomes)      // [Timóteo Sofia Helena]
+	fmt.Println(len(nomes)) // 3
 }
