@@ -15,10 +15,10 @@ func main() {
 		num := rand.Intn(10) + 1
 
 		if num <= 5 {
-			fmt.Printf("\033[1;32;40mO seu número é especial: %v\n\033[0;0;0m", num)
+			fmt.Printf("\033[1;32mO seu número é especial: %v\n\033[0;0;0m", num)
 			numEsp++
 		} else {
-			fmt.Printf("\033[1;31;40mO seu número é totalmente normal: %v\n\033[0;0;0m", num)
+			fmt.Printf("\033[0;31mO seu número é totalmente normal: %v\n\033[0;0;0m", num)
 			numNor++
 		}
 
