@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	as.Arrays1()
+	as.Slices3()
 }
